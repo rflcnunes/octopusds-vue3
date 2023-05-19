@@ -1,7 +1,9 @@
 {
   "name": "octopus-vue3",
   "type": "module",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "main": "./dist/octopus.umd.cjs",
   "module": "./dist/octopus.js",
   "exports": {
@@ -51,5 +53,6 @@
     "start-server-and-test": "^2.0.0",
     "storybook": "^7.0.12",
     "vite": "^4.3.5"
-  }
+  },
+  "version": "0.1.0"
 }
