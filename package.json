@@ -4,16 +4,10 @@
   "files": [
     "dist"
   ],
-  "main": "./dist/octopus.umd.cjs",
-  "module": "./dist/octopus.js",
+  "main": "dist/octopus.umd.js",
+  "module": "dist/octopus.js",
   "version": "0.1.0",
   "private": false,
-  "exports": {
-    ".": {
-      "import": "./dist/octopus.js",
-      "require": "./dist/octopus.umd.cjs"
-    }
-  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
