@@ -1,10 +1,12 @@
 {
   "name": "octopusds-vue3",
   "type": "module",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "main": "./dist/octopus.umd.cjs",
   "module": "./dist/octopus.js",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "private": false,
   "exports": {
     ".": {
