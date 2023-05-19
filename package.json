@@ -6,7 +6,7 @@
   ],
   "main": "dist/octopus.umd.js",
   "module": "dist/octopus.js",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": false,
   "scripts": {
     "dev": "vite",
