@@ -1,23 +1,32 @@
-import { fileURLToPath, URL } from 'node:url'
+import { resolve, dirname } from 'path'
+import { fileURLToPath } from 'url'
 import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
+
+// Obtenha o caminho do diretório atual do módulo
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
 
 export default defineConfig({
-  plugins: [vue()],
   build: {
     lib: {
-      entry: fileURLToPath(new URL('./lib/octopus.js', import.meta.url)), // Arquivo principal da sua biblioteca
-      name: 'Octopus', // Nome da sua biblioteca
-      fileName: (format) => `octopus.${format}.js` // Nome do arquivo de saída
+      // Também poderia ser um diretório ou
+      // arranjo de vários pontos de entrada
+      entry: resolve(__dirname, './lib/octopus.js'),
+      name: 'Octopus',
+      // as extensões apropriadas serão adicionadas
+      fileName: 'octopus'
     },
     rollupOptions: {
-      // Opções de configuração do Rollup
-      // Aqui você pode configurar plugins adicionais, opções de empacotamento, etc.
-    }
-  },
-  resolve: {
-    alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
+      // certifica-te de expor as dependências que não devem
+      // ser empacotadas na tua biblioteca
+      external: ['vue'],
+      output: {
+        // Forneça as variáveis globais para utilizar na
+        // construção UMD para as dependências expostas
+        globals: {
+          vue: 'Vue'
+        }
+      }
     }
   }
 })

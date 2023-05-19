@@ -1,13 +1,15 @@
 {
-  "name": "octopusds-vue3",
+  "name": "octopus-vue3",
   "type": "module",
-  "files": [
-    "dist"
-  ],
-  "main": "dist/octopus.umd.js",
-  "module": "dist/octopus.js",
-  "version": "0.2.0",
-  "private": false,
+  "files": ["dist"],
+  "main": "./dist/octopus.umd.cjs",
+  "module": "./dist/octopus.js",
+  "exports": {
+    ".": {
+      "import": "./dist/octopus.js",
+      "require": "./dist/octopus.umd.cjs"
+    }
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
