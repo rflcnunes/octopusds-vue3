@@ -1,5 +1,5 @@
 {
-  "name": "@rflcstnunes/octopusds-vue3",
+  "name": "octopusds-vue3",
   "type": "module",
   "files": ["dist"],
   "main": "./dist/octopus.umd.cjs",
